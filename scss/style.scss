@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+$font: "Roboto", sans-serif;
+$primay-back1: #232325;
+$primary-back2: #A8B9F1;
+$primary-back3: #45567D;
+$primary-back4: gray;
+$primary-nav: black;
+
+@mixin grid-layout{
+  display: grid;
+  grid-gap: 2em;
+  grid-template-columns: repeat(3, 1fr);
+}
+@mixin border-img {
+  border: 3px solid $primary-back2;
+}
+@mixin flex-horizontal {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+}
+body {
+  font: 100% $font;
+  margin: 0;
+  background-color: $primay-back1;
+}
+.navbar {
+  background-color: $primary-nav;
+  position: fixed;
+  z-index: 4;
+  height: 60px;
+  color: white;
+
+  &__list {
+    width: 100vw;
+    @include flex-horizontal();
+    text-decoration: none;
+    list-style-type: none;
+  }
+  &__list-link{
+  color: white;
+  text-decoration: none;
+  font-size: 1.4em;
+  font-weight: bold;
+  letter-spacing: 1px
+  }
+}
+
+.intro {
+  height: 100vh;
+  display: flex;
+  font-size: 1.5em;
+  background-color: $primay-back1;
+  opacity: .9;
+  color: white;
+
+  &__section{
+    padding: 5rem;
+    float: left;
+  }
+  &__intro-heading{
+    font-size: 2.5rem;
+    text-align: left;
+  }
+  &__cv-img{
+    display: flex;
+    padding: 3rem;
+  }
+  &__pic{
+    height: 21.875rem;
+    width: 21.875rem;
+    border-radius: 50%;
+    margin-top: 30%;
+    float: right;
+    @include border-img;
+  }
+}
+
+.projects{
+  padding: 0em 2em 2em 2em;
+  background-color: $primary-back2;
+  &__intro{
+  padding: 1em;
+  text-align: center;
+  margin: auto;
+  font-size: 3em;
+  color: white;
+  }
+  &__wrapper{
+    @include grid-layout();    
+  }
+  &__title > h3{
+  text-align: center;
+  height:50px;
+  background-color: $primary-back4;
+  margin-top: 0;
+  padding-top: 4%;
+  }
+  &__title > h3 > a {
+  text-decoration: none;
+  color: white;
+  }
+  &__title > img {
+  width: 100%;
+  height: 400px;
+  border: 1px solid black;
+  }
+}
+
+.skills{
+  width: 100%;
+  height: 35vh;
+  background-color: $primary-back3; 
+  text-align: center;
+
+  &__heading{
+  width: 40%;
+  margin: auto;
+  font-size: 2em;
+  padding: 3% 1% 1% 1%;
+  margin-bottom: 3%;
+  border-bottom: 1px solid black;
+  color: white
+  }
+  &__seven-buttons{
+    @include flex-horizontal();
+    font-size: 70px;
+    color: #095BE3;
+  }
+}
+
+.form{
+  height: 95vh;
+  text-align: center;
+  background-color:$primary-back2;
+
+  &__heading{
+  width: 40%;
+  margin: auto;
+  font-size: 2em;
+  padding: 3% 1% 1% 1%;
+  margin-bottom: 3%;
+  border-bottom: 1px solid black;
+  color: white;
+  }
+  &__form-area{
+  font-size: 15px;
+  text-align: left;
+  line-height: 4.5em;
+  padding: 30px;
+  box-shadow: 0px 5px 20px rgb(71, 71, 71);
+  background: white;
+  width: 30%;
+  margin: auto;
+  }
+}
+
+.footer{
+  padding-bottom: 0.5em;
+  background-color:black;
+  color: white;
+  text-align: center;
+  &__logos{
+    @include flex-horizontal();
+  }
+  &__logos > i {
+    margin-top: 1.875rem;
+    font-size: 3.125rem; 
+  }
+}
+

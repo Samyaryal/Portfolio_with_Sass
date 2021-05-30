@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+$font: "Roboto", sans-serif;
+$primay-back1: #CED0D3;
+$primary-back2: #A8B9F1;
+$primary-back3: #45567D;
+$primary-back4: gray;
+$primary-nav: black;
+
+@mixin flex-horizontal {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+}
+body {
+  font: 100% $font;
+  margin: 0;
+  background-color:$primay-back1;
+}
+.navbar {
+  background-color: $primary-nav;
+  position: fixed;
+  z-index: 4;
+  height: 60px;
+  color: white;
+
+  &__list {
+    width: 100vw;
+    @include flex-horizontal();
+    text-decoration: none;
+    list-style-type: none;
+  }
+  &__list-link{
+  color: white;
+  text-decoration: none;
+  font-size: 1.4em;
+  font-weight: bold;
+  letter-spacing: 1px
+  }
+}
+.head-section > h1{
+  text-align: center;
+  width: 30%;
+  padding-top: 5rem;
+  margin: auto;
+  font-size: 2em;
+  border-bottom: 1px solid black;
+}
+.blog-name {
+ margin-left: 1.25rem;
+}
+.footer{
+  padding-bottom: 0.5em;
+  background-color: black;
+  color: white;
+  text-align: center;
+
+  &__logos{
+    @include flex-horizontal();
+  }
+  &__logos > i {
+    margin-top: 1.875rem;
+    font-size: 3.125rem; 
+  }
+}
